@@ -3,6 +3,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
+import emailjs from '@emailjs/browser';
 import { Button } from '@/components/ui/button';
 import {
   Form,
@@ -30,17 +31,6 @@ const formSchema = z.object({
   }),
 });
 
-async function handleFormSubmit(data: z.infer<typeof formSchema>) {
-  // This is a placeholder for form submission logic.
-  // In a real application, you would integrate with a service like EmailJS or a backend API.
-  console.log('Form data:', data);
-  // Simulate network delay
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  // The line below is a placeholder to demonstrate success.
-  // Replace this with your actual form submission logic.
-  return { success: true };
-}
-
 export function ContactForm() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = React.useState(false);
@@ -57,21 +47,29 @@ export function ContactForm() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
     try {
-      const result = await handleFormSubmit(values);
-      if (result.success) {
-        toast({
-          title: 'Message Sent!',
-          description: "Thank you for contacting us. We'll get back to you shortly.",
-        });
-        form.reset();
-      } else {
-        throw new Error('Form submission failed');
-      }
+      const serviceID = 'service_wdto5w5';
+      const templateID = 'template_al4vpki';
+      const publicKey = 'PgoIsQkLi1jpBu0PP';
+
+      const templateParams = {
+        name: values.name,
+        email: values.email,
+        message: values.message,
+      };
+
+      await emailjs.send(serviceID, templateID, templateParams, publicKey);
+      
+      toast({
+        title: 'Message Sent!',
+        description: "Thank you for contacting us. We'll get back to you shortly.",
+      });
+      form.reset();
     } catch (error) {
+      console.error('EmailJS error:', error);
       toast({
         variant: 'destructive',
         title: 'Uh oh! Something went wrong.',
-        description: 'There was a problem with your request. Please try again.',
+        description: 'There was a problem sending your message. Please try again later.',
       });
     } finally {
         setIsSubmitting(false);
@@ -132,9 +130,6 @@ export function ContactForm() {
           )}
           Send Message
         </Button>
-        <p className="text-center text-xs text-muted-foreground">
-            Note: This is a demo form. To make it functional, integrate it with a service like EmailJS.
-        </p>
       </form>
     </Form>
   );

@@ -105,6 +105,84 @@ With so many options, choosing a specialization can be overwhelming. Let's explo
 - **Follow your curiosity:** What topics genuinely excite you?
 - **Talk to people:** Reach out to professionals in fields that interest you.
         `,
+    },
+    {
+        slug: 'staying-motivated',
+        title: 'How to Stay Motivated While Studying Engineering',
+        description: 'Engineering studies can be tough. Learn practical tips for staying motivated, managing stress, and keeping your long-term goals in sight.',
+        date: '2024-08-01',
+        tags: ['Productivity', 'Motivation'],
+        content: `
+## Keeping the Fire Alive
+Motivation can ebb and flow during a challenging engineering degree. Here’s how to keep it consistent.
+
+### 1. Set Clear, Achievable Goals
+Break down large tasks into smaller, manageable steps. Completing these small goals provides a sense of accomplishment and builds momentum.
+
+### 2. Remember Your 'Why'
+Reconnect with the reasons you chose engineering. Was it to solve problems, innovate, or build cool things? Keep that passion at the forefront.
+
+### 3. Find a Study Group
+Collaborating with peers can make learning more engaging and less isolating. You can tackle difficult problems together and motivate each other.
+
+### 4. Take Regular Breaks
+Avoid burnout by scheduling regular breaks. Step away from your desk, stretch, or do something you enjoy. Your brain needs time to rest and recharge.
+
+### 5. Celebrate Your Wins
+Acknowledge your progress, no matter how small. Did you finally understand a difficult concept? Pass a tough exam? Treat yourself!
+        `,
+    },
+    {
+        slug: 'top-5-languages',
+        title: 'Top 5 Programming Languages for CSE Students',
+        description: 'The programming landscape is always changing. Here are the top 5 languages every Computer Science student should consider learning in 2024.',
+        date: '2024-08-03',
+        tags: ['Programming', 'Career'],
+        content: `
+## Languages to Boost Your Career
+While fundamentals are key, knowing the right languages can give you a competitive edge.
+
+### 1. Python
+Its simplicity, versatility, and extensive libraries make it a must-know. It's the king of AI/ML, data science, and scripting.
+
+### 2. JavaScript/TypeScript
+The language of the web. Essential for front-end and back-end (Node.js) development. TypeScript adds static typing, which is a huge plus for large projects.
+
+### 3. Java
+A rock-solid choice for large-scale enterprise applications, Android development, and big data systems. Its object-oriented nature teaches great programming habits.
+
+### 4. C++
+The powerhouse for performance-critical applications like game development, high-frequency trading, and operating systems. It gives you a deep understanding of memory management.
+
+### 5. SQL
+Not a traditional programming language, but arguably one of the most important skills. Every developer needs to interact with databases, and SQL is the standard.
+        `,
+    },
+    {
+        slug: 'academic-balance',
+        title: 'Balancing Academics and Extracurriculars in College',
+        description: 'College is more than just classes. Learn how to successfully manage your time between studies, clubs, and personal life without getting overwhelmed.',
+        date: '2024-08-05',
+        tags: ['College Life', 'Productivity'],
+        content: `
+## The Ultimate Juggling Act
+Excelling in academics while having a rich social and extracurricular life is possible with the right strategies.
+
+### 1. Prioritize with a Planner
+Use a digital calendar or physical planner to map out your week. Schedule classes, study time, club meetings, and social events. Seeing it all laid out helps you make smart decisions.
+
+### 2. Learn to Say No
+You can't do everything. It's okay to decline opportunities if your plate is already full. Protect your time and energy for the things that matter most to you.
+
+### 3. Be Present
+When you're studying, focus only on studying. When you're at a club meeting, be fully engaged. Avoid multitasking to get the most out of each activity.
+
+### 4. Integrate Your Activities
+Can you find a club related to your major? Or a project for a class that could also be a portfolio piece? Finding overlaps can make your efforts more efficient.
+
+### 5. Schedule Downtime
+Don't forget to schedule time for rest, hobbies, and simply doing nothing. This is not a luxury; it's essential for preventing burnout and maintaining your mental health.
+        `,
     }
 ];
 
