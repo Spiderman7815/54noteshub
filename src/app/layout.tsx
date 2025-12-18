@@ -71,6 +71,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} scroll-smooth`}>
       <head>
+        <meta name="google-site-verification" content="g1G3rQVd3ADd7FQy_3450PomNORIs3PUKBccTijzXz0" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
