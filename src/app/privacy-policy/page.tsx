@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { ShieldCheck } from 'lucide-react';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
