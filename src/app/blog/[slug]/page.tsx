@@ -18,6 +18,8 @@ export async function generateStaticParams() {
   }));
 }
 
+const siteUrl = 'https://54noteshub.netlify.app';
+
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const post = getBlogPost(params.slug);
   if (!post) {
@@ -26,6 +28,28 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   return {
     title: post.title,
     description: post.description,
+    openGraph: {
+        title: post.title,
+        description: post.description,
+        url: `${siteUrl}/blog/${post.slug}`,
+        type: 'article',
+        publishedTime: post.date,
+        authors: ['54NotesHub Team'],
+        images: [
+            {
+                url: post.image.imageUrl,
+                width: 1200,
+                height: 630,
+                alt: post.title,
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: post.title,
+        description: post.description,
+        images: [post.image.imageUrl],
+    },
   };
 }
 
@@ -36,7 +60,39 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${siteUrl}/blog/${post.slug}`,
+    },
+    headline: post.title,
+    description: post.description,
+    image: post.image.imageUrl,
+    author: {
+      '@type': 'Organization',
+      name: '54NotesHub',
+      url: siteUrl,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: '54NotesHub',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteUrl}/logo.png`,
+      },
+    },
+    datePublished: post.date,
+    dateModified: post.date,
+  };
+
   return (
+    <>
+    <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+    />
     <div className="container mx-auto max-w-4xl px-4 py-12 md:px-6 md:py-16 lg:py-20">
       <article className="prose prose-lg mx-auto max-w-none text-foreground dark:prose-invert prose-headings:font-headline prose-a:text-primary prose-strong:font-semibold prose-strong:text-foreground prose-img:rounded-xl">
         <div className="space-y-4 not-prose">
@@ -74,5 +130,6 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
       </article>
     </div>
+    </>
   );
 }
