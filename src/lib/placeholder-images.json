@@ -3,8 +3,26 @@
     {
       "id": "hero-image",
       "description": "A hero image for a student resource website.",
-      "imageUrl": "https://images.unsplash.com/photo-1728455635901-bb16530faf40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkeSUyMHN0dWRlbnRzfGVufDB8fHx8MTc2NjA3NzYyNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkeSUyMHN0dWRlbnRzfGVufDB8fHx8MTc2NjA3NzYyNHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "study students"
+    },
+    {
+      "id": "blog-study",
+      "description": "A student studying with books and a laptop.",
+      "imageUrl": "https://images.unsplash.com/photo-1674664900495-23e53956f249?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzdHVkeSUyMGxhcHRvcHxlbnwwfHx8fDE3NjYwNzgwMDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "study laptop"
+    },
+    {
+      "id": "blog-career",
+      "description": "A person planning their career path.",
+      "imageUrl": "https://images.unsplash.com/photo-1609741199432-c3ff173d436b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjYXJlZXIlMjBwbGFufGVufDB8fHx8MTc2NjA3ODAwNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "career plan"
+    },
+    {
+      "id": "blog-tech",
+      "description": "Abstract technology background with code.",
+      "imageUrl": "https://images.unsplash.com/photo-1632251141959-40b21a6c118c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx0ZWNobm9sb2d5JTIwY29kZXxlbnwwfHx8fDE3NjYwMDcxNjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "technology code"
     }
   ]
 }

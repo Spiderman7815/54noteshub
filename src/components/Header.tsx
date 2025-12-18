@@ -10,10 +10,10 @@ import * as React from 'react';
 
 const navLinks = [
   { href: '/', label: 'Home' },
+  { href: '/btech', label: 'Courses' },
+  { href: '/blog', label: 'Blog' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
-  { href: '/privacy-policy', label: 'Privacy Policy' },
-  { href: '/terms', label: 'Terms & Conditions' },
 ];
 
 export function Header() {
@@ -21,7 +21,7 @@ export function Header() {
   const [isSheetOpen, setSheetOpen] = React.useState(false);
 
   const NavLink = ({ href, label, className }: { href: string; label: string; className?: string }) => {
-    const isActive = pathname === href;
+    const isActive = pathname === href || (href !== '/' && pathname.startsWith(href));
     return (
       <Link href={href} passHref>
         <SheetClose asChild>
@@ -48,20 +48,22 @@ export function Header() {
           <BookOpenText className="h-6 w-6 text-primary" />
           <span>54NotesHub</span>
         </Link>
-        <nav className="hidden items-center gap-4 md:flex">
-          {navLinks.slice(0, 3).map((link) => (
+        <nav className="hidden items-center gap-1 md:flex">
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
+            return(
             <Link key={link.href} href={link.href} passHref>
               <Button
                 variant="ghost"
                 className={cn(
                   'text-sm font-medium',
-                  pathname === link.href ? 'text-primary' : 'text-muted-foreground'
+                  isActive ? 'text-primary' : 'text-muted-foreground'
                 )}
               >
                 {link.label}
               </Button>
             </Link>
-          ))}
+          )})}
         </nav>
         <div className="md:hidden">
           <Sheet open={isSheetOpen} onOpenChange={setSheetOpen}>
@@ -71,29 +73,29 @@ export function Header() {
                 <span className="sr-only">Open Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-full max-w-xs p-4">
-              <SheetTitle className="sr-only">Menu</SheetTitle>
-              <SheetDescription className="sr-only">
-                Main navigation menu for 54NotesHub
-              </SheetDescription>
-              <div className="flex flex-col space-y-4">
-                <div className="flex items-center justify-between">
-                    <Link href="/" className="flex items-center gap-2 font-headline text-lg font-bold" onClick={() => setSheetOpen(false)}>
-                        <BookOpenText className="h-6 w-6 text-primary" />
-                        <span>54NotesHub</span>
-                    </Link>
-                    <SheetClose asChild>
-                        <Button variant="ghost" size="icon">
-                            <X className="h-6 w-6" />
-                        </Button>
-                    </SheetClose>
+            <SheetContent side="right" className="w-full max-w-xs p-0">
+                <div className="flex h-full flex-col">
+                    <div className="flex items-center justify-between border-b p-4">
+                        <Link href="/" className="flex items-center gap-2 font-headline text-lg font-bold" onClick={() => setSheetOpen(false)}>
+                            <BookOpenText className="h-6 w-6 text-primary" />
+                            <span>54NotesHub</span>
+                        </Link>
+                        <SheetClose asChild>
+                            <Button variant="ghost" size="icon">
+                                <X className="h-6 w-6" />
+                            </Button>
+                        </SheetClose>
+                    </div>
+                    <nav className="mt-4 flex flex-col items-start space-y-1 p-4">
+                        {navLinks.map((link) => (
+                        <NavLink key={link.href} href={link.href} label={link.label} />
+                        ))}
+                    </nav>
                 </div>
-                <nav className="mt-8 flex flex-col items-start space-y-2">
-                  {navLinks.map((link) => (
-                    <NavLink key={link.href} href={link.href} label={link.label} />
-                  ))}
-                </nav>
-              </div>
+                <SheetTitle className="sr-only">Menu</SheetTitle>
+                <SheetDescription className="sr-only">
+                    Main navigation menu for 54NotesHub
+                </SheetDescription>
             </SheetContent>
           </Sheet>
         </div>
