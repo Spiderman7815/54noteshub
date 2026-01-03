@@ -35,6 +35,7 @@ export default function AboutPage() {
           <ul>
             <li><strong>Comprehensive, Syllabus-Aligned Notes:</strong> Detailed and structured notes for a wide array of CSE subjects, carefully aligned with common university curricula to ensure relevance and completeness.</li>
             <li><strong>Instant, Seamless Access:</strong> All our notes are hosted on Google Drive, allowing for lightning-fast previews and direct, one-click downloads without any hassle.</li>
+            <li><strong>Valuable Original Content:</strong> Our blog features in-depth articles on study techniques, career guidance, and technology trends written to help you succeed beyond the classroom.</li>
             <li><strong>Optimized User Experience:</strong> We've built a clean, minimal, and fast-loading website that is a pleasure to navigate on any device, be it your laptop, tablet, or smartphone.</li>
             <li><strong>A Commitment to Free Education:</strong> We are fundamentally committed to our "free for everyone" promise. Our goal is to break down financial barriers to education.</li>
           </ul>

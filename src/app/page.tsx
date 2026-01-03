@@ -72,7 +72,7 @@ export default function Home() {
                         <CardTitle>Comprehensive & Curated Notes</CardTitle>
                     </CardHeader>
                     <CardContent className="flex-grow">
-                        <p className="text-muted-foreground">Access high-quality, well-organized notes covering the entire B.Tech CSE syllabus. We save you time from searching, so you can focus on learning effectively.</p>
+                        <p className="text-muted-foreground">Stop wasting time searching for incomplete or outdated materials. We provide high-quality, well-organized notes covering the entire B.Tech CSE syllabus, saving you time to focus on effective learning.</p>
                     </CardContent>
                 </Card>
                  <Card className="flex flex-col">
@@ -81,7 +81,7 @@ export default function Home() {
                         <CardTitle>Valuable Blog Content</CardTitle>
                     </CardHeader>
                     <CardContent className="flex-grow">
-                        <p className="text-muted-foreground">Read insightful articles on proven study strategies, career guidance for the tech industry, and emerging technology trends to keep you ahead of the curve.</p>
+                        <p className="text-muted-foreground">Go beyond your coursework with our insightful articles. We cover proven study strategies, practical career guidance for the tech industry, and explain emerging technology trends to keep you ahead of the curve.</p>
                     </CardContent>
                 </Card>
                  <Card className="flex flex-col">
@@ -90,7 +90,7 @@ export default function Home() {
                         <CardTitle>Easy-to-Find Resources</CardTitle>
                     </CardHeader>
                     <CardContent className="flex-grow">
-                        <p className="text-muted-foreground">Our powerful and intuitive search feature lets you instantly find the exact notes and materials you need for any subject, anytime, anywhere.</p>
+                        <p className="text-muted-foreground">Our powerful and intuitive search feature lets you instantly find the exact notes and materials you need for any subject. No more frustration, just immediate access, anytime, anywhere.</p>
                     </CardContent>
                 </Card>
             </div>
