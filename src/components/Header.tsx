@@ -51,7 +51,7 @@ export function Header() {
   const NavLink = ({ href, label, className }: { href: string; label: string; className?: string }) => {
     const isActive = pathname === href || (href !== '/' && pathname.startsWith(href));
     return (
-      <Link href={href} passHref>
+      <Link href={href}>
         <SheetClose asChild>
           <Button
             variant="ghost"
@@ -83,7 +83,7 @@ export function Header() {
                   const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
                   return (
                     <NavigationMenuItem key={link.href}>
-                      <Link href={link.href} passHref>
+                      <Link href={link.href} legacyBehavior passHref>
                         <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), isActive ? 'font-bold text-primary' : 'text-muted-foreground')}>
                            <a>{link.label}</a>
                         </NavigationMenuLink>
@@ -114,7 +114,7 @@ export function Header() {
                   const isActive = pathname === link.href;
                   return (
                     <NavigationMenuItem key={link.href}>
-                       <Link href={link.href} passHref>
+                       <Link href={link.href} legacyBehavior passHref>
                         <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), isActive ? 'font-bold text-primary' : 'text-muted-foreground')}>
                            <a>{link.label}</a>
                         </NavigationMenuLink>
@@ -198,5 +198,3 @@ const ListItem = React.forwardRef<
   )
 })
 ListItem.displayName = "ListItem"
-
-    
