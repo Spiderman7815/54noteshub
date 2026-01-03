@@ -84,7 +84,7 @@ export function Header() {
                     <NavigationMenuItem key={link.href}>
                       <Link href={link.href} passHref>
                         <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), isActive ? 'font-bold text-primary' : 'text-muted-foreground')}>
-                          <a>{link.label}</a>
+                           <a>{link.label}</a>
                         </NavigationMenuLink>
                       </Link>
                     </NavigationMenuItem>
@@ -197,3 +197,5 @@ const ListItem = React.forwardRef<
   )
 })
 ListItem.displayName = "ListItem"
+
+    
