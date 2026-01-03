@@ -41,6 +41,18 @@
       "description": "A scale balancing books on one side and sports equipment on the other.",
       "imageUrl": "https://images.unsplash.com/photo-1550791871-06c451c99484?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b3JrJTIwbGlmZSUyMGJhbGFuY2V8ZW58MHx8fHwxNzY2MTIwMTAyfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "life balance"
+    },
+    {
+      "id": "blog-portfolio",
+      "description": "A person showcasing their work portfolio on a laptop.",
+      "imageUrl": "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb3J0Zm9saW8lMjB വെബ്സൈറ്റ്fGVufDB8fHx8MTc2NjEzMDUyMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "portfolio website"
+    },
+    {
+      "id": "blog-big-o",
+      "description": "A graph showing different Big O complexity curves.",
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkYXRhJTIwZ3JhcGh8ZW58MHx8fHwxNzY2MTMwNTIyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "data graph"
     }
   ]
 }

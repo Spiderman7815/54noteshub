@@ -16,7 +16,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/terms',
     '/disclaimer',
     '/sitemap',
-    '/adsense-check'
+    '/adsense-check',
+    '/gpa-calculator',
   ];
 
   const mainRoutes = mainPages.map((route) => ({

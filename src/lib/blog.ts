@@ -249,6 +249,100 @@ Look for ways to make your activities work for you.
 Rest is not a luxury; it is a critical component of performance. Your brain consolidates learning and memory while you sleep. Chronic sleep deprivation will sabotage all your hard work.
 -   **Actionable Tip:** Schedule "do nothing" time in your calendar just as you would a class. Aim for 7-8 hours of quality sleep per night. It's the ultimate study tool.
         `,
+    },
+    {
+      slug: 'build-killer-portfolio',
+      title: 'How to Build a Killer Portfolio That Gets You Hired',
+      description: 'Your portfolio is your single most important asset in a tech job search. Learn how to choose the right projects, document them effectively, and present them in a way that impresses recruiters.',
+      date: '2024-08-08',
+      tags: ['Career', 'Portfolio', 'Job Search'],
+      content: `
+## Your Portfolio: The Ultimate Proof of Skill
+In the tech industry, a degree gets you in the door, but a portfolio gets you the job. It's your chance to say, "Don't just take my word for it, look what I can build." A great portfolio is a curated collection of your best work, demonstrating your technical skills, problem-solving ability, and passion for your craft.
+
+### Step 1: Choosing the Right Projects
+Quality over quantity. Three impressive, well-documented projects are far better than ten half-finished tutorials.
+- **Show, Don't Just Tell:** Your projects should demonstrate the skills listed on your resume. If you list "React" and "Node.js," you need a full-stack project to prove it.
+- **Solve a Real Problem:** The most compelling projects are those that solve a real-world problem, even a small one. It could be a tool to automate a tedious task for yourself, an app for a local club, or a new take on a common application.
+- **Go Beyond the Tutorial:** Tutorials are great for learning, but they don't make good portfolio pieces on their own. Take what you learned and build something unique with it. Add new features, change the design, or use a different backend.
+
+### Step 2: Documentation is Everything (README.md)
+A project without a good `README.md` is like a book without a cover. It's the first thing a recruiter or hiring manager will see.
+Your `README.md` should include:
+- **Project Title and a Live Demo Link:** Make it easy for them to see your work in action.
+- **High-Level Summary:** A short paragraph explaining what the project is and what problem it solves.
+- **Tech Stack:** A list of the key technologies, frameworks, and libraries you used.
+- **Features:** A bulleted list of what users can do with your application.
+- **Local Setup:** Clear instructions on how someone else can run your project on their own machine. This proves you understand the development lifecycle.
+
+### Step 3: Clean Code & Version Control
+Your code itself will be scrutinized.
+- **Consistent Style:** Use a linter (like ESLint for JavaScript) and a formatter (like Prettier) to keep your code style consistent and clean.
+- **Meaningful Commit Messages:** Your Git history tells a story. `git commit -m "feat: Implement user authentication with JWT"` is infinitely better than `git commit -m "more stuff"`.
+- **No Secrets:** Never commit API keys, passwords, or other sensitive information. Use environment variables and a `.gitignore` file.
+
+### Step 4: Presenting Your Portfolio
+- **Personal Website:** This is the ideal home for your portfolio. It should be a simple, professional site with an "About Me" section, a "Projects" section, and a link to your resume.
+- **GitHub Profile:** Pin your best 3-4 projects to your GitHub profile so they are immediately visible.
+- **Live Demos:** Always, always, always have a live, working demo of your web projects. Services like Vercel, Netlify, and GitHub Pages make this easy and free. A recruiter is 10x more likely to look at a live site than to clone your repo.
+      `,
+    },
+    {
+      slug: 'demystifying-big-o',
+      title: 'Demystifying Big O Notation: A Beginner\'s Guide',
+      description: 'Big O notation is a fundamental concept for any software engineer. This guide breaks it down in simple terms, helping you understand how to analyze the efficiency of your code.',
+      date: '2024-08-10',
+      tags: ['Algorithms', 'Data Structures', 'Interviews'],
+      content: `
+## Why Big O Matters
+Big O notation is a way to describe the performance or complexity of an algorithm. Specifically, it describes the **worst-case scenario** for how an algorithm's runtime or memory usage scales as the size of the input data grows. Understanding Big O is crucial for writing efficient code and is a standard topic in technical interviews.
+
+### The Core Idea: Scalability
+Imagine you have a list of 10 items and an algorithm that takes 1 second to run on it. How long will it take for 100 items? Or 1,000,000? Big O helps us answer this question by focusing on the "big picture" of growth. It ignores precise measurements (like milliseconds) and constants, focusing instead on the overall shape of the growth curve.
+
+### Common Big O Complexities (From Best to Worst)
+
+#### 1. O(1) - Constant Time
+The algorithm takes the same amount of time, regardless of the input size. This is the holy grail of efficiency.
+- **Example:** Accessing an element in an array by its index (`my_array[5]`). It doesn't matter if the array has 10 elements or 10 million; getting the item at a specific index takes the same amount of time.
+
+#### 2. O(log n) - Logarithmic Time
+The runtime grows logarithmically with the input size. This is extremely efficient. Every time you double the input size, the number of operations only increases by one.
+- **Example:** Binary Search. When you search for an item in a sorted array, you can eliminate half of the remaining elements with each step.
+
+#### 3. O(n) - Linear Time
+The runtime grows directly in proportion to the input size. If the input size doubles, the runtime also doubles. This is a very common and generally acceptable complexity.
+- **Example:** Iterating through all elements in a list or array.
+\`\`\`python
+for item in my_list:
+  print(item)
+\`\`\`
+
+#### 4. O(n log n) - Log-Linear Time
+This complexity often appears in efficient sorting algorithms. It's slightly less efficient than O(n) but is still considered very good for many problems.
+- **Example:** Merge Sort and Heap Sort algorithms.
+
+#### 5. O(n²) - Quadratic Time
+The runtime grows by the square of the input size. If the input doubles, the runtime quadruples. This can become slow very quickly and should be avoided for large datasets.
+- **Example:** A nested loop that iterates over the same list twice.
+\`\`\`python
+for item_a in my_list:
+  for item_b in my_list:
+    if item_a == item_b:
+      # do something
+\`\`\`
+
+#### 6. O(2^n) - Exponential Time
+The runtime doubles with each addition to the input dataset. These algorithms are extremely slow and are only practical for very small input sizes.
+- **Example:** Recursive calculation of Fibonacci numbers without memoization.
+
+### Simplifying the Rules
+When calculating Big O, always think about the worst-case scenario and simplify:
+1.  **Drop Constants:** O(2n) simplifies to O(n). We care about the overall growth, not the exact multiple.
+2.  **Drop Non-Dominant Terms:** O(n² + n) simplifies to O(n²). As 'n' gets very large, the n² term dominates and the 'n' term becomes insignificant.
+
+Understanding Big O is not about premature optimization. It's about making informed choices when designing algorithms to ensure they are scalable and performant.
+`
     }
 ];
 

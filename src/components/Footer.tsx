@@ -18,6 +18,7 @@ const legalLinks = [
 const utilityLinks = [
     { href: '/sitemap', label: 'Sitemap' },
     { href: '/adsense-check', label: 'AdSense Check' },
+    { href: '/gpa-calculator', label: 'CGPA Calculator' },
 ]
 
 export function Footer() {

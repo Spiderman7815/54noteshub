@@ -1,9 +1,10 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { ArrowRight, BookText, PenTool, Search } from 'lucide-react';
+import { ArrowRight, BookText, PenTool, Search, Quote } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-image');
@@ -97,7 +98,70 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="cta" className="w-full py-12 md:py-24 lg:py-32">
+      <section id="testimonials" className="w-full py-12 md:py-24 lg:py-32">
+        <div className="container mx-auto px-4 md:px-6">
+           <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                 <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-5xl">What Students Are Saying</h2>
+                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                    We're proud to have helped thousands of students on their academic journey.
+                 </p>
+              </div>
+           </div>
+           <div className="mx-auto mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              <Card>
+                 <CardContent className="pt-6">
+                    <Quote className="h-8 w-8 text-primary" />
+                    <p className="mt-4 text-muted-foreground">"The notes on Data Structures were a lifesaver. They were so well-organized and covered all the important topics right before my final exams."</p>
+                 </CardContent>
+                 <CardHeader className="flex flex-row items-center gap-4">
+                    <Avatar>
+                       <AvatarImage src="https://picsum.photos/seed/1/40/40" alt="Priya S." />
+                       <AvatarFallback>PS</AvatarFallback>
+                    </Avatar>
+                    <div>
+                       <CardTitle className="text-base">Priya S.</CardTitle>
+                       <CardDescription>2nd Year CSE Student</CardDescription>
+                    </div>
+                 </CardHeader>
+              </Card>
+              <Card>
+                 <CardContent className="pt-6">
+                    <Quote className="h-8 w-8 text-primary" />
+                    <p className="mt-4 text-muted-foreground">"I finally understood Operating Systems concepts thanks to this site. The folder had everything I needed, from notes to question papers."</p>
+                 </CardContent>
+                 <CardHeader className="flex flex-row items-center gap-4">
+                    <Avatar>
+                       <AvatarImage src="https://picsum.photos/seed/2/40/40" alt="Amit K." />
+                       <AvatarFallback>AK</AvatarFallback>
+                    </Avatar>
+                    <div>
+                       <CardTitle className="text-base">Amit K.</CardTitle>
+                       <CardDescription>3rd Year CSE Student</CardDescription>
+                    </div>
+                 </CardHeader>
+              </Card>
+              <Card>
+                 <CardContent className="pt-6">
+                    <Quote className="h-8 w-8 text-primary" />
+                    <p className="mt-4 text-muted-foreground">"As an AI & ML student, finding specialized notes can be tough. The CSM section is fantastic and has resources I couldn't find anywhere else."</p>
+                 </CardContent>
+                 <CardHeader className="flex flex-row items-center gap-4">
+                    <Avatar>
+                       <AvatarImage src="https://picsum.photos/seed/3/40/40" alt="Neha R." />
+                       <AvatarFallback>NR</AvatarFallback>
+                    </Avatar>
+                    <div>
+                       <CardTitle className="text-base">Neha R.</CardTitle>
+                       <CardDescription>3rd Year CSM Student</CardDescription>
+                    </div>
+                 </CardHeader>
+              </Card>
+           </div>
+        </div>
+      </section>
+
+      <section id="cta" className="w-full bg-muted/40 py-12 md:py-24 lg:py-32">
         <div className="container mx-auto flex flex-col items-center justify-center space-y-4 px-4 text-center md:px-6">
             <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">Ready to Elevate Your Studies?</h2>
             <p className="max-w-[600px] text-muted-foreground md:text-xl">
