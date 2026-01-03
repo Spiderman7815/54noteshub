@@ -84,8 +84,8 @@ export function Header() {
                   return (
                     <NavigationMenuItem key={link.href}>
                       <Link href={link.href} legacyBehavior passHref>
-                        <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), isActive ? 'font-bold text-primary' : 'text-muted-foreground')}>
-                           <a>{link.label}</a>
+                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), isActive ? 'font-bold text-primary' : 'text-muted-foreground')}>
+                          {link.label}
                         </NavigationMenuLink>
                       </Link>
                     </NavigationMenuItem>
@@ -115,8 +115,8 @@ export function Header() {
                   return (
                     <NavigationMenuItem key={link.href}>
                        <Link href={link.href} legacyBehavior passHref>
-                        <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), isActive ? 'font-bold text-primary' : 'text-muted-foreground')}>
-                           <a>{link.label}</a>
+                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), isActive ? 'font-bold text-primary' : 'text-muted-foreground')}>
+                           {link.label}
                         </NavigationMenuLink>
                       </Link>
                     </NavigationMenuItem>
