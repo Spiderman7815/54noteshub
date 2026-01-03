@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/blog',
     '/btech',
     '/btech/cse',
+    '/btech/csm',
     '/privacy-policy',
     '/terms',
     '/disclaimer',

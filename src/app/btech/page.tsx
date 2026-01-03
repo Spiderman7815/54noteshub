@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, Laptop } from 'lucide-react';
+import { ArrowRight, Laptop, BrainCircuit } from 'lucide-react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -19,7 +19,7 @@ export default function BTechPage() {
           </p>
         </div>
       </div>
-      <div className="mx-auto mt-12 grid max-w-sm items-start gap-8 sm:max-w-4xl sm:grid-cols-1 md:gap-12 lg:max-w-5xl">
+      <div className="mx-auto mt-12 grid max-w-sm items-start gap-8 sm:max-w-4xl sm:grid-cols-1 md:gap-12 lg:max-w-5xl lg:grid-cols-2">
         <Link href="/btech/cse">
           <Card className="group transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
             <CardHeader className="flex flex-row items-center justify-between">
@@ -29,13 +29,32 @@ export default function BTechPage() {
                 </div>
                 <div>
                   <CardTitle>Computer Science Engineering (CSE)</CardTitle>
-                  <CardDescription>The only branch currently available.</CardDescription>
+                  <CardDescription>The core branch for computer science fundamentals.</CardDescription>
                 </div>
               </div>
               <ArrowRight className="h-6 w-6 text-muted-foreground transition-transform duration-300 group-hover:translate-x-1 group-hover:text-primary" />
             </CardHeader>
             <CardContent>
-              <p>Access a wide range of notes, syllabus, and materials for all Computer Science Engineering subjects.</p>
+              <p>Access a wide range of notes, syllabus, and materials for all core Computer Science Engineering subjects.</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/btech/csm">
+          <Card className="group transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+            <CardHeader className="flex flex-row items-center justify-between">
+              <div className="flex items-center gap-4">
+                <div className="rounded-full bg-accent p-3">
+                  <BrainCircuit className="h-6 w-6 text-accent-foreground" />
+                </div>
+                <div>
+                  <CardTitle>CSE (AI & ML)</CardTitle>
+                  <CardDescription>Specialized branch for Artificial Intelligence and Machine Learning.</CardDescription>
+                </div>
+              </div>
+              <ArrowRight className="h-6 w-6 text-muted-foreground transition-transform duration-300 group-hover:translate-x-1 group-hover:text-primary" />
+            </CardHeader>
+            <CardContent>
+              <p>Explore specialized subjects in AI, Machine Learning, Data Science, and other advanced topics.</p>
             </CardContent>
           </Card>
         </Link>

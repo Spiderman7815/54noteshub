@@ -1,20 +1,46 @@
 "use client";
 
 import Link from 'next/link';
-import { BookOpenText, Menu, X } from 'lucide-react';
+import { BookOpenText, Menu, X, BrainCircuit, Laptop } from 'lucide-react';
 import { Button } from './ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle, SheetDescription } from './ui/sheet';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import * as React from 'react';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu"
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/btech', label: 'Courses' },
   { href: '/blog', label: 'Blog' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
 ];
+
+const courseComponents: { title: string; href: string; description: string, icon: React.FC<React.SVGProps<SVGSVGElement>> }[] = [
+  {
+    title: "Computer Science (CSE)",
+    href: "/btech/cse",
+    description:
+      "Access notes for core computer science subjects like Data Structures, Algorithms, and Operating Systems.",
+    icon: Laptop
+  },
+  {
+    title: "CSE (AI & ML)",
+    href: "/btech/csm",
+    description:
+      "Explore specialized notes for Artificial Intelligence, Machine Learning, Deep Learning, and more.",
+    icon: BrainCircuit
+  },
+]
+
 
 export function Header() {
   const pathname = usePathname();
@@ -49,21 +75,53 @@ export function Header() {
           <span>54NotesHub</span>
         </Link>
         <nav className="hidden items-center gap-1 md:flex">
-          {navLinks.map((link) => {
-            const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
-            return(
-            <Link key={link.href} href={link.href} passHref>
-              <Button
-                variant="ghost"
-                className={cn(
-                  'text-sm font-medium',
-                  isActive ? 'text-primary' : 'text-muted-foreground'
-                )}
-              >
-                {link.label}
-              </Button>
-            </Link>
-          )})}
+         <NavigationMenu>
+            <NavigationMenuList>
+               {navLinks.slice(0,1).map((link) => {
+                  const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
+                  return (
+                    <NavigationMenuItem key={link.href}>
+                      <Link href={link.href} legacyBehavior passHref>
+                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), isActive ? 'font-bold text-primary' : 'text-muted-foreground')}>
+                          {link.label}
+                        </NavigationMenuLink>
+                      </Link>
+                    </NavigationMenuItem>
+                  )
+                })}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className={cn(pathname.startsWith('/btech') && 'font-bold text-primary')}>Courses</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                    {courseComponents.map((component) => {
+                      const Icon = component.icon;
+                      return (
+                      <ListItem
+                        key={component.title}
+                        title={component.title}
+                        href={component.href}
+                        icon={<Icon className="h-6 w-6 text-primary" />}
+                      >
+                        {component.description}
+                      </ListItem>
+                    )})}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+               {navLinks.slice(1).map((link) => {
+                  const isActive = pathname === link.href;
+                  return (
+                    <NavigationMenuItem key={link.href}>
+                      <Link href={link.href} legacyBehavior passHref>
+                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), isActive ? 'font-bold text-primary' : 'text-muted-foreground')}>
+                          {link.label}
+                        </NavigationMenuLink>
+                      </Link>
+                    </NavigationMenuItem>
+                  )
+                })}
+            </NavigationMenuList>
+          </NavigationMenu>
         </nav>
         <div className="md:hidden">
           <Sheet open={isSheetOpen} onOpenChange={setSheetOpen}>
@@ -87,9 +145,14 @@ export function Header() {
                         </SheetClose>
                     </div>
                     <nav className="mt-4 flex flex-col items-start space-y-1 p-4">
-                        {navLinks.map((link) => (
-                        <NavLink key={link.href} href={link.href} label={link.label} />
-                        ))}
+                        <NavLink href="/" label="Home" />
+                        <p className="px-4 pt-2 pb-1 text-sm font-semibold text-muted-foreground">COURSES</p>
+                        <NavLink href="/btech/cse" label="CSE" />
+                        <NavLink href="/btech/csm" label="CSE (AI & ML)" />
+                        <p className="px-4 pt-4 pb-1 text-sm font-semibold text-muted-foreground">SITE</p>
+                        <NavLink href="/blog" label="Blog" />
+                        <NavLink href="/about" label="About" />
+                        <NavLink href="/contact" label="Contact" />
                     </nav>
                 </div>
                 <SheetTitle className="sr-only">Menu</SheetTitle>
@@ -103,3 +166,32 @@ export function Header() {
     </header>
   );
 }
+
+const ListItem = React.forwardRef<
+  React.ElementRef<"a">,
+  React.ComponentPropsWithoutRef<"a"> & { icon: React.ReactNode }
+>(({ className, title, children, icon, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className
+          )}
+          {...props}
+        >
+          <div className="flex items-center gap-3">
+             {icon}
+            <div className="text-sm font-medium leading-none">{title}</div>
+          </div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </li>
+  )
+})
+ListItem.displayName = "ListItem"

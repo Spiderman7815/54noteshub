@@ -175,3 +175,52 @@ export const notes: Note[] = rawNotes
     };
   })
   .filter((note): note is Note => note !== null);
+
+const rawCsmNotes: { subject: string; url: string; description: string }[] = [
+    { subject: 'Mathematical and Statistical Foundations', url: 'https://drive.google.com/drive/folders/1yNHwMIc2gbJ0ub6cFByaEQriHEFM747O?usp=sharing', description: 'Core mathematical and statistical concepts for AI and ML.' },
+    { subject: 'Data Structures', url: 'https://drive.google.com/file/d/1V1-TtR2Ey3Wb9rrMfulHLcQRThK2GDNx/view', description: 'Fundamental data structures for efficient data management.' },
+    { subject: 'Computer Organization and Architecture', url: 'https://drive.google.com/drive/u/2/folders/1t3M47Bz799uBPR4Wn1_5QCP5NqadxNGS', description: 'Understanding the hardware and software interface of computer systems.' },
+    { subject: 'Software Engineering', url: 'https://drive.google.com/file/d/1_o24VDZEoBhI7RuYlfLB_ZZ6XO2318VS/view', description: 'Methodologies for designing, developing, and maintaining software.' },
+    { subject: 'Operating System', url: 'https://drive.google.com/drive/u/2/folders/1c46G7kvpxK18mBLQaBmvG-6fSAFT5Dxd', description: 'Core concepts of operating systems including processes, memory, and storage.' },
+    { subject: 'Discrete Mathematics', url: 'https://drive.google.com/file/d/1-VrK3CzC6YyB4xPCILNOs74qZD5PV3B-/view', description: 'Essential mathematical structures for computer science.' },
+    { subject: 'Automata Theory and Compiler Design', url: 'https://drive.google.com/drive/folders/1R0_AhAedymKx43HRFgtMHKNOXpLAFoBZ?usp=sharing', description: 'Formal languages, automata, and the principles of compiler construction.' },
+    { subject: 'Database Management and System', url: 'https://drive.google.com/file/d/1NR8OGItBaOq1MVD1TZCAeIOZz685yfeP/view?usp=sharing', description: 'Concepts of database design, implementation, and management.' },
+    { subject: 'Introduction to Artificial Intelligence', url: 'https://drive.google.com/drive/folders/1f66MSkXydOinIQhkB7prNYLG8hF5jdML?usp=sharing', description: 'Fundamental principles and techniques of artificial intelligence.' },
+    { subject: 'Object Oriented Programming through Java', url: 'https://drive.google.com/drive/folders/1vwQIcB_QfXAbU9hrsHceYiVNOc6zEt8z?usp=sharing', description: 'Learning object-oriented programming concepts using Java.' },
+    { subject: 'Design and Analysis of Algorithms', url: 'https://drive.google.com/file/d/1vc3B5-X9bHUVBqBZzt9GyIQ8a8fK_Y6Q/view?usp=sharing', description: 'Designing algorithms and analyzing their performance.' },
+    { subject: 'Machine Learning', url: 'https://drive.google.com/drive/folders/1f6ULi2pEJfbjTzkKlcuZHc8m6BSPhsYL?usp=sharing', description: 'Core machine learning algorithms and their applications.' },
+    { subject: 'Computer Networks', url: 'https://drive.google.com/file/d/19dnyOB--f9BQ1mhQ7u4yaGgWDUcYlb9H/view?usp=sharing', description: 'Principles of computer networking and communication protocols.' },
+    { subject: 'Business Economics & Financial Analysis', url: 'https://drive.google.com/file/d/1r5ghDmloxqm7ZjnctbswBdF4_mPEIO2N/view?usp=sharing', description: 'Economic principles and financial analysis for business decisions.' },
+    { subject: 'Web Programming', url: 'https://drive.google.com/file/d/1NT20EmySL0TgaC4smfo9_lW3rL2R-1QH/view?usp=sharing', description: 'Technologies for building dynamic web applications.' },
+    { subject: 'Image Processing', url: 'https://drive.google.com/file/d/1ib-d-JOPSFWzu10fRNtsLpS5V2qhPS0m/view?usp=sharing', description: 'Techniques for processing and analyzing digital images.' },
+    { subject: 'Computer Graphics', url: 'https://drive.google.com/file/d/1_V7qGNQdm8zUqaUdmHwCcero-Tn4HIql/view?usp=sharing', description: 'Algorithms and techniques for generating computer graphics.' },
+    { subject: 'Knowledge Representation and Reasoning', url: 'https://drive.google.com/file/d/1GgVvc4YkesGA-C0pqIdQwFHyWPW1_39D/view?usp=sharing', description: 'Methods for representing knowledge and reasoning in AI systems.' },
+    { subject: 'Data Analytics', url: 'https://drive.google.com/file/d/1dn53a4WYO6iYi01yZl9BD1TyBcZF5FEb/view?usp=sharing', description: 'Techniques for analyzing data to extract meaningful insights.' },
+    { subject: 'Natural Language Processing', url: 'https://drive.google.com/file/d/1RiPQzrQ1AMRhvf-W5cApSQxhKrWAwkwf/view?usp=sharing', description: 'Enabling computers to understand and process human language.' },
+    { subject: 'Software Testing Methodologies', url: 'https://drive.google.com/file/d/1Y4wz_hH-extYXPp3owBmjfC8NrPInCGj/view?usp=sharing', description: 'Principles and practices of software testing.' },
+    { subject: 'Information Retrieval Systems', url: 'https://drive.google.com/file/d/1Cr0M5cKb35DcXgmMbhR0UucFuSveZnU7/view?usp=sharing', description: 'Systems for storing, searching, and retrieving information.' },
+    { subject: 'Data Warehousing and Business Intelligence', url: 'https://drive.google.com/file/d/1DT-zUagDZGORYdDqRr6TsidD6d-TERDT/view?usp=sharing', description: 'Concepts and tools for data warehousing and business intelligence.' },
+    { subject: 'Deep Learning', url: 'https://drive.google.com/file/d/1mimKbZ20ioosU5A3b18YRlxpGXwI_IJx/view?usp=sharing', description: 'Advanced machine learning using deep neural networks.' },
+    { subject: 'Internet of Things', url: 'https://drive.google.com/file/d/1NnhTnzDqisTzVnZpx_-jd71L6nRO2mRk/view?usp=sharing', description: 'Connecting physical devices to the internet for data exchange.' },
+    { subject: 'Data Mining', url: 'https://drive.google.com/drive/folders/1B68Ar2Bry8KZmkPYs9bvUp3VDUV4QSrt?usp=sharing', description: 'Discovering patterns in large data sets.' },
+    { subject: 'Scripting Languages', url: 'https://drive.google.com/file/d/14fnN_FjclpNs7qJvizZrkrVHN3B7zKjk/view?usp=sharing', description: 'Languages for automating tasks and scripting system behaviors.' },
+    { subject: 'Mobile Application Development', url: 'https://drive.google.com/file/d/18QrguUTfvQcxrA0EDxr5Xt5BQ13WEehK/view?usp=sharing', description: 'Developing applications for mobile devices.' },
+    { subject: 'Cloud Computing', url: 'https://drive.google.com/file/d/1PVGByA1ZyqSGWfsA_5Qdm3x2gehfN8qq/view?usp=sharing', description: 'Delivering computing services over the internet.' },
+    { subject: 'Web Programming Notes Set-2', url: 'https://drive.google.com/file/d/1PVGByA1ZyqSGWfsA_5Qdm3x2gehfN8qq/view?usp=sharing', description: 'Additional notes and resources for web programming.' },
+];
+
+
+export const csmNotes: Note[] = rawCsmNotes
+  .map((note, index) => {
+    const isFolder = note.url.includes('/folders/');
+    const driveId = getDriveId(note.url);
+    if (!driveId) return null;
+    return {
+      id: `csm-note-${index + 1}`,
+      title: note.subject,
+      description: note.description,
+      driveId: driveId,
+      isFolder: isFolder,
+    };
+  })
+  .filter((note): note is Note => note !== null);
