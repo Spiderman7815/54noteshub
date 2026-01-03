@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from 'next/link';
@@ -81,9 +82,9 @@ export function Header() {
                   const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
                   return (
                     <NavigationMenuItem key={link.href}>
-                      <Link href={link.href} passHref>
-                        <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), isActive ? 'font-bold text-primary' : 'text-muted-foreground')}>
-                          <a>{link.label}</a>
+                      <Link href={link.href} legacyBehavior passHref>
+                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), isActive ? 'font-bold text-primary' : 'text-muted-foreground')}>
+                          {link.label}
                         </NavigationMenuLink>
                       </Link>
                     </NavigationMenuItem>
@@ -112,9 +113,9 @@ export function Header() {
                   const isActive = pathname === link.href;
                   return (
                     <NavigationMenuItem key={link.href}>
-                      <Link href={link.href} passHref>
-                        <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), isActive ? 'font-bold text-primary' : 'text-muted-foreground')}>
-                          <a>{link.label}</a>
+                      <Link href={link.href} legacyBehavior passHref>
+                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), isActive ? 'font-bold text-primary' : 'text-muted-foreground')}>
+                          {link.label}
                         </NavigationMenuLink>
                       </Link>
                     </NavigationMenuItem>
@@ -176,7 +177,7 @@ const ListItem = React.forwardRef<
       <NavigationMenuLink asChild>
         <Link
           ref={ref}
-          href={href}
+          href={href!}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className
