@@ -82,8 +82,8 @@ export function Header() {
                   return (
                     <NavigationMenuItem key={link.href}>
                       <Link href={link.href} passHref>
-                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), isActive ? 'font-bold text-primary' : 'text-muted-foreground')}>
-                          {link.label}
+                        <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), isActive ? 'font-bold text-primary' : 'text-muted-foreground')}>
+                          <a>{link.label}</a>
                         </NavigationMenuLink>
                       </Link>
                     </NavigationMenuItem>
@@ -113,8 +113,8 @@ export function Header() {
                   return (
                     <NavigationMenuItem key={link.href}>
                       <Link href={link.href} passHref>
-                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), isActive ? 'font-bold text-primary' : 'text-muted-foreground')}>
-                          {link.label}
+                        <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), isActive ? 'font-bold text-primary' : 'text-muted-foreground')}>
+                          <a>{link.label}</a>
                         </NavigationMenuLink>
                       </Link>
                     </NavigationMenuItem>
@@ -168,14 +168,15 @@ export function Header() {
 }
 
 const ListItem = React.forwardRef<
-  React.ElementRef<typeof Link>,
+  React.ElementRef<"a">,
   React.ComponentPropsWithoutRef<typeof Link> & { icon: React.ReactNode, title: string }
->(({ className, title, children, icon, ...props }, ref) => {
+>(({ className, title, children, icon, href, ...props }, ref) => {
   return (
     <li>
       <NavigationMenuLink asChild>
         <Link
           ref={ref}
+          href={href}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className
