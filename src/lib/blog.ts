@@ -267,8 +267,8 @@ Quality over quantity. Three impressive, well-documented projects are far better
 - **Go Beyond the Tutorial:** Tutorials are great for learning, but they don't make good portfolio pieces on their own. Take what you learned and build something unique with it. Add new features, change the design, or use a different backend.
 
 ### Step 2: Documentation is Everything (README.md)
-A project without a good `README.md` is like a book without a cover. It's the first thing a recruiter or hiring manager will see.
-Your `README.md` should include:
+A project without a good \`README.md\` is like a book without a cover. It's the first thing a recruiter or hiring manager will see.
+Your \`README.md\` should include:
 - **Project Title and a Live Demo Link:** Make it easy for them to see your work in action.
 - **High-Level Summary:** A short paragraph explaining what the project is and what problem it solves.
 - **Tech Stack:** A list of the key technologies, frameworks, and libraries you used.
@@ -278,8 +278,8 @@ Your `README.md` should include:
 ### Step 3: Clean Code & Version Control
 Your code itself will be scrutinized.
 - **Consistent Style:** Use a linter (like ESLint for JavaScript) and a formatter (like Prettier) to keep your code style consistent and clean.
-- **Meaningful Commit Messages:** Your Git history tells a story. `git commit -m "feat: Implement user authentication with JWT"` is infinitely better than `git commit -m "more stuff"`.
-- **No Secrets:** Never commit API keys, passwords, or other sensitive information. Use environment variables and a `.gitignore` file.
+- **Meaningful Commit Messages:** Your Git history tells a story. \`git commit -m "feat: Implement user authentication with JWT"\` is infinitely better than \`git commit -m "more stuff"\`.
+- **No Secrets:** Never commit API keys, passwords, or other sensitive information. Use environment variables and a \`.gitignore\` file.
 
 ### Step 4: Presenting Your Portfolio
 - **Personal Website:** This is the ideal home for your portfolio. It should be a simple, professional site with an "About Me" section, a "Projects" section, and a link to your resume.
@@ -304,7 +304,7 @@ Imagine you have a list of 10 items and an algorithm that takes 1 second to run 
 
 #### 1. O(1) - Constant Time
 The algorithm takes the same amount of time, regardless of the input size. This is the holy grail of efficiency.
-- **Example:** Accessing an element in an array by its index (`my_array[5]`). It doesn't matter if the array has 10 elements or 10 million; getting the item at a specific index takes the same amount of time.
+- **Example:** Accessing an element in an array by its index (\`my_array[5]\`). It doesn't matter if the array has 10 elements or 10 million; getting the item at a specific index takes the same amount of time.
 
 #### 2. O(log n) - Logarithmic Time
 The runtime grows logarithmically with the input size. This is extremely efficient. Every time you double the input size, the number of operations only increases by one.
